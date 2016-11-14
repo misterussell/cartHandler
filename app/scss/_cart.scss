@@ -1,4 +1,13 @@
 .cart {
   float: right;
   width: 30%;
+
+  h1 {
+    font-family: $font-header;
+  }
+
+  ul {
+    font-family: $font-body;
+    background-color: $color-background-cart;
+  }
 }

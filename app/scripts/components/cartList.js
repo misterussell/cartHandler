@@ -6,7 +6,7 @@ export default React.createClass({
   render() {
     let cart;
     if (this.props.cart.items.length < 1) {
-      cart = <li>No items yet</li> ;
+      cart = <li>No items in cart</li> ;
     } else {
       cart = this.props.cart.items.map((item, i) => {
         return <CartItem key={i} item={item} location={i}/>;
@@ -14,7 +14,7 @@ export default React.createClass({
     }
     return (
       <div className="cart">
-        <h1>Cart</h1>
+        <h1>Cart Blanche</h1>
         <ul>
           {cart}
         </ul>

@@ -1,4 +1,22 @@
 .store {
   float: left;
-  width: 70%;
+  width: 30%;
+  padding-left: 40%;
+  padding-top: 0;
+
+  h1 {
+    font-family: $font-header;
+  }
+
+  ul {
+    background: $color-background-cart;
+
+    h2 {
+      font-weight: bolder;
+    }
+
+    h3 {
+      font-weight: normal;
+    }
+  }
 }
