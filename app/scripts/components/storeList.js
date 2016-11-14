@@ -4,13 +4,16 @@ import StoreItem from './storeItem';
 
 export default React.createClass({
   render() {
-    let storeItems = this.props.items.map((item) => {
-      return <StoreItem key={item.id} item={item} />;
+    let storeItems = this.props.items.map((item, i) => {
+      return <StoreItem key={item.id} item={item}/>;
     });
     return (
-      <ul className="store">
-        {storeItems}
-      </ul>
+      <div className="store">
+        <h1>Store Items</h1>
+        <ul>
+          {storeItems}
+        </ul>
+      </div>
     );
   }
 });

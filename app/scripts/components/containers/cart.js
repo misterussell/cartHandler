@@ -19,8 +19,8 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <CartList cartItems={this.state.cart || []}/>
-        <StoreList items={store.storeData}/>
+        <CartList cart={this.state.cart} />
+        <StoreList items={store.storeData} />
       </div>
     );
   }
