@@ -9,5 +9,14 @@
   ul {
     font-family: $font-body;
     background-color: $color-background-cart;
+
+    button {
+      box-sizing: border-box;
+      border: none;
+      border-radius: 5rem;
+      padding: .25rem;
+      background: $color-primary-2;
+      color: $color-text-button;
+    }
   }
 }

@@ -1,42 +1,42 @@
 export default [
   {
     id: 1,
-    item: 'x',
-    price: 10.00
+    item: 'Rodeo Tickets',
+    price: 55.00
   },
   {
     id: 2,
-    item: 'x',
-    price: 10.00
+    item: 'Martini Shaker',
+    price: 21.00
   },
   {
     id: 3,
-    item: 'x',
-    price: 10.00
+    item: 'Ice Cream',
+    price: 7.00
   },
   {
     id: 4,
-    item: 'x',
-    price: 10.00
+    item: 'Red Dress',
+    price: 150.00
   },
   {
     id: 5,
-    item: 'x',
-    price: 10.00
+    item: 'Dentist Voucer',
+    price: 40.00
   },
   {
     id: 6,
-    item: 'x',
-    price: 10.00
+    item: 'Pearl Necklace',
+    price: 80.00
   },
   {
     id: 7,
-    item: 'x',
-    price: 10.00
+    item: 'Bath Bomb',
+    price: 7.00
   },
   {
     id: 8,
-    item: 'x',
+    item: 'Sunglasses',
     price: 10.00
   }
 ];
