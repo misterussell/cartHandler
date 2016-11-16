@@ -5,12 +5,18 @@ import sinon from 'sinon';
 import Cart from '../../app/scripts/models/cart.js'
 
 describe('cart model', () => {
-  let spy = sinon.spy();
+  // let spy = sinon.spy();
   let cart;
+  let cleanCart;
 
   beforeEach(() => {
     cart = new Cart();
-    cart.on('change', spy);
+    // cart.on('change', () => {
+    //   cleanCart = cart.toJSON();
+    // });
+    // console.log(cleanCart);
+    // cart.on('change', spy);
+    // console.log(cart);
   });
 
   // Baseline tests
@@ -53,27 +59,64 @@ describe('cart model', () => {
   // });
 
   // Listener tests
-  it('addItem method registers change event', () => {
+  it('addItem method registers change event and updates the val of items', () => {
+    let spy = sinon.spy(cart, 'addItem');
     cart.addItem({
         id: 1,
         item: 'test',
         price: 10.00
       });
     expect(spy.callCount).to.equal(1);
+    expect(cart.attributes.items).to.deep.equal([{
+        id: 1,
+        item: 'test',
+        price: 10.00
+      }]);
   });
 
-  it('removeItem method registers change event', () => {
+  // cart.should.trigger("change", {with: cart.items}).when(cart.addItem({
+  //     id: 1,
+  //     item: 'test',
+  //     price: 10.00
+  //   })
+  // );
+
+  // it('addItem method changes object value: items', () => {
+  //   // expect(cart.addItem).to.change(cart.attributes, 'items');
+  //   // expect(cart.addItem).to.change(cleanCart, 'items');
+  //   // check to see if the property deep equals an exact thing
+  //
+  //   });
+
+  it('removeItem method registers change event and updates the val of items', () => {
+    let spy = sinon.spy(cart, 'removeItem');
+    cart.addItem({
+        id: 1,
+        item: 'test',
+        price: 10.00
+      });
     cart.removeItem(1);
     expect(spy.callCount).to.equal(1);
+    expect(cart.attributes.items).to.deep.equal([]);
   });
 
-  it('calculateTotal method registers change event', () => {
+  it('calculateTotal method registers change event and updates the value of total', () => {
+    let spy = sinon.spy(cart, 'calculateTotal');
     cart.addItem({
         id: 1,
         item: 'test',
         price: 10.00
       });
-    cart.calculateTotal();
-    expect(spy.callCount).to.equal(2);
+    console.log(cart.attributes);
+    cart.addItem({
+        id: 2,
+        item: 'test',
+        price: 20.00
+      });
+    cart.removeItem(1);
+    // testing for 3 changes (2 add 1 remove)
+    console.log(cart.attributes);
+    expect(spy.callCount).to.equal(3);
+    expect(cart.attributes.total).to.deep.equal(10);
   });
 });

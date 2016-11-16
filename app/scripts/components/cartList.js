@@ -6,10 +6,10 @@ export default React.createClass({
   render() {
     let cart;
     if (this.props.cart.items.length < 1) {
-      cart = <li>No items in cart</li> ;
+      cart = <li>No items in cart</li>;
     } else {
       cart = this.props.cart.items.map((item, i) => {
-        return <CartItem key={i} item={item} location={i}/>;
+        return <CartItem key={i} item={item} loc={i}/>;
       });
     }
     return (
