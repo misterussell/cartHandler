@@ -9,8 +9,7 @@ import CartItem from '../../app/scripts/components/cartItem.js';
 import Buttons from '../../app/scripts/components/buttons.js';
 
 describe('CartItem component', () => {
-  let test;
-  let listItem;
+  let test, listItem, spy, buttons;
 
   test = {
         id: 1,
@@ -30,6 +29,7 @@ describe('CartItem component', () => {
     expect(listItem.props).to.exist;
   });
 
+  // Below will need to implement a require props lib
   // it('should not have props when no items are passed in', () => {
   //   listItem.setProps({item: undefined});
   //   // expect(item.props).to.not.exist;
@@ -54,6 +54,8 @@ describe('CartItem component', () => {
   });
 
   it('should register a click event when child is clicked', () => {
+    spy = sinon.spy(listItem, 'addAdditional');
     listItem.find(Buttons).last().simulate('click');
-  })
+    expect(spy.callCount).to.equal(1);
+  });
 });

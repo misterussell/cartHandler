@@ -19,10 +19,10 @@
   5. Test that callBack methods are functions that can be triggered
 3. Buttons Component
   1. Element renders `complete`
-  2. Element can receive callBack props 
+  2. Element can receive callBack props `complete`
   3. Element conditionally outputs a set of buttons `complete`
-  4. Button clicks register
-    - events
+  4. Button clicks register `complete`
+    - events `complete`
     - events on the parent container
 
 ## Dependencies
