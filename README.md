@@ -18,6 +18,12 @@
   4. No state tests
   5. Test that callBack methods are functions that can be triggered
 3. Buttons Component
+  1. Element renders `complete`
+  2. Element can receive callBack props 
+  3. Element conditionally outputs a set of buttons `complete`
+  4. Button clicks register
+    - events
+    - events on the parent container
 
 ## Dependencies
 - `sass` [install guide here](http://sass-lang.com/install)

@@ -31,8 +31,8 @@ describe('CartItem component', () => {
   });
 
   // it('should not have props when no items are passed in', () => {
-  //   item.setProps({item: null});
-  //   expect(item.props).to.not.exist;
+  //   listItem.setProps({item: undefined});
+  //   // expect(item.props).to.not.exist;
   // });
 
   it('item should contain headers displaying the item\'s name and price', () => {
@@ -53,4 +53,7 @@ describe('CartItem component', () => {
     expect(listItem.instance().removeFromCart).to.be.a('function');
   });
 
+  it('should register a click event when child is clicked', () => {
+    listItem.find(Buttons).last().simulate('click');
+  })
 });

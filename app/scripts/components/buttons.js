@@ -19,10 +19,12 @@ export default React.createClass({
   },
   handleAdd(e) {
     e.preventDefault();
+    console.log('Add clicked');
     this.props.add();
   },
   handleRemove(e) {
     e.preventDefault();
+    console.log('Remove clicked');
     this.props.remove();
   }
 });
