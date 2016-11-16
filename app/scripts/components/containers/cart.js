@@ -12,7 +12,7 @@ export default React.createClass({
     };
   },
   componentDidMount() {
-    store.cart.on('change', () => {
+    store.cart.on('change change:[items]', () => {
       this.setState({cart: store.cart.toJSON()});
     });
   },
