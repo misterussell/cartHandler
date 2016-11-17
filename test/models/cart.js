@@ -95,25 +95,26 @@ describe('cart model', () => {
         item: 'test',
         price: 10.00
       });
-    cart.removeItem(1);
+    cart.removeItem({
+        id: 1,
+        item: 'test',
+        price: 10.00
+      });
     expect(spy.callCount).to.equal(1);
     expect(cart.attributes.items).to.deep.equal([]);
   });
 
   it('calculateTotal method registers change event and updates the value of total', () => {
     let spy = sinon.spy(cart, 'calculateTotal');
-    cart.addItem({
-        id: 1,
-        item: 'test',
-        price: 10.00
-      });
+    let item = {id: 2, item: 'test', price: 20};
+    cart.addItem(item);
     console.log(cart.attributes);
     cart.addItem({
         id: 2,
         item: 'test',
         price: 20.00
       });
-    cart.removeItem(1);
+    cart.removeItem(item);
     // testing for 3 changes (2 add 1 remove)
     console.log(cart.attributes);
     expect(spy.callCount).to.equal(3);

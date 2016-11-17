@@ -12,19 +12,23 @@ export default Backbone.Model.extend({
     this.set({items: updatedItems, total: this.calculateTotal(item)});
     // this.calculateTotal();
   },
-  removeItem(location) {
+  removeItem(item) {
     // console.log('Item removed.');
-    let newArr = this.get('items').slice(location, 1);
+    // let newArr = this.get('items').slice(location, 1);
+    // item.price = (item.price * -1);
+    console.log(item);
     this.set({items: newArr, total: this.calculateTotal()});
   },
-  calculateTotal() {
-    let newTotal = 0;
-    console.log('Total updated.');
-    this.get('items').forEach((item) => {
-      newTotal += item.price;
-    });
-    // this.set({total: newTotal});
-    return newTotal;
+  calculateTotal(newItem) {
+    // let newTotal = 0;
+    let priorTotal = this.get('total');
+
+    let total = priorTotal + newItem.price;
+
+    // console.log('Total updated.');
+    // this.get('items').forEach((item) => {
+    //   newTotal += item.price;
+    // });
+    return total;
   },
-  // setProperty()
 });
