@@ -9,20 +9,13 @@ import Buttons from '../../app/scripts/components/buttons.js';
 
 
 describe('Buttons component', () => {
-  let buttons, add, remove, spy, spy2, e;
+  let buttons, add, remove;
 
   beforeEach(() => {
-    // spy = spyOnComponentMethod(Buttons, 'handleAdd');
-    // spy2 = spyOnComponentMethod(Buttons, 'handleRemove');
     add = sinon.spy();
     remove = sinon.spy();
     buttons = shallow(<Buttons add={add} remove={remove} />);
   });
-
-  // afterEach(() => {
-  //   spy.restore();
-  //   spy2.restore();
-  // });
 
   it('should render a div', () => {
     expect(buttons.is('div')).to.be.true
@@ -39,7 +32,7 @@ describe('Buttons component', () => {
     expect(buttons.contains(<button className="add">Add</button>)).to.equal.false;
   });
 
-  it('if no add prop is passed in, only an add button should output', () => {
+  it('if no remove prop is passed in, only an add button should output', () => {
     buttons.setProps({remove: null});
     expect(buttons.contains(<button className="add">Add</button>)).to.equal.true;
     expect(buttons.contains(<button className="remove">Remove</button>)).to.equal.false;

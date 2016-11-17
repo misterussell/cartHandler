@@ -3,7 +3,7 @@ import Backbone from 'backbone';
 import {expect} from 'chai';
 import sinon from 'sinon';
 import {shallow} from 'enzyme';
-import {spyOnComponentMethod} from 'sinon-spy-react'
+import {spyOnComponentMethod} from 'sinon-spy-react';
 
 import CartItem from '../../app/scripts/components/cartItem.js';
 import Buttons from '../../app/scripts/components/buttons.js';
